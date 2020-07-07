@@ -1,5 +1,7 @@
+$filePath="./dist.zip"
+if(Test-Path $filePath)
+{
+    Remove-Item $filePath -Recurse -Force
+}
 
-$publishDir="C:/Mutou/JenkinsPublish/webProject"
-
-
-zip zipFile: 'dist.zip', dir: $publishDir
+Compress-Archive -Path "./build" -Destination "./dist.zip"
