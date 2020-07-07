@@ -4,9 +4,14 @@ pipeline {
         CI = 'true'
     }
     stages {
+        stage('deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'   
+            }
+        }
         stage('publish') {
             steps {
-                sh './jenkins/scripts/publish.powershell'   
+                bat './jenkins/scripts/publish.powershell'   
             }
         }
     }
