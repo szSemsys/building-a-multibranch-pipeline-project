@@ -1,3 +1,4 @@
+Set-ExecutionPolicy Unrestricted
 $publishDir="C:/Mutou/JenkinsPublish/webProject"
 if(Test-Path $publishDir)
 {
@@ -5,4 +6,6 @@ if(Test-Path $publishDir)
 }
 
 md $publishDir
+
+echo $publishDir
 Compress-Archive -Path ./ -Destination $publishDir + "/dist.zip"
