@@ -1,7 +1,1 @@
-$filePath="./dist.zip"
-if(Test-Path $filePath)
-{
-    Remove-Item $filePath -Recurse -Force
-}
-
-Compress-Archive -Path "./build" -Destination "./dist.zip"
+Compress-Archive -Path "./" -Destination "./dist.zip"
