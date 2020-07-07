@@ -1,6 +1,6 @@
-#$compressedName="dist.7z";
-#$cmdargs = "7z a "+$compressedName+" -w .\*"
-#cmd /c $cmdargs
+powershell label: '', script: '''$compressedName="dist.7z";
+$cmdargs = "7z a "+$compressedName+" -w .\\*"
+cmd /c $cmdargs
 
 $publishDir="C:/Mutou/JenkinsPublish/webProject"
 if(Test-Path $publishDir)
@@ -10,4 +10,5 @@ if(Test-Path $publishDir)
 
 md $publishDir
 
-# Copy-Item compressedName -Destination $publishDir
+Copy-Item compressedName -Destination $publishDir
+'''
