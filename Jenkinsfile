@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh './jenkins/scripts/deliver-for-development.sh'
                 inpput message: 'Finished?'
                 sh './jenkins/scripts/kill.sh'
             }
