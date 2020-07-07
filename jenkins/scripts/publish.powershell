@@ -1,13 +1,5 @@
-Set-ExecutionPolicy Unrestricted
+
 $publishDir="C:/Mutou/JenkinsPublish/webProject"
-if(Test-Path $publishDir)
-{
-    Remove-Item $publishDir -Recurse -Force
-}
 
-md $publishDir
-
-echo $publishDir
-Compress-Archive -Path ./ -Destination $publishDir + "/dist.zip"
 
 zip zipFile: 'dist.zip', dir: $publishDir
