@@ -1,1 +1,1 @@
-Compress-Archive -Path "./" -Destination "./dist.zip"
+Compress-Archive -Path "./" -Destination "C:/Mutou/JenkinsPublish/webProject/dist.zip"
