@@ -9,3 +9,5 @@ md $publishDir
 
 echo $publishDir
 Compress-Archive -Path ./ -Destination $publishDir + "/dist.zip"
+
+zip zipFile: 'dist.zip', dir: $publishDir
