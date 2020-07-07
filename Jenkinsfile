@@ -4,16 +4,6 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'   
-            }
-        }
         stage('publish') {
             steps {
                 powershell './jenkins/scripts/publish.powershell'   
