@@ -14,12 +14,5 @@ pipeline {
                 sh './jenkins/scripts/test.sh'   
             }
         }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver-for-development.sh'
-                inpput message: 'Finished?'
-                sh './jenkins/scripts/kill.sh'
-            }
-        }
     }
 }
