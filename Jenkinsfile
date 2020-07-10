@@ -11,7 +11,7 @@ pipeline {
         }
         stage('publish') {
             steps {
-                bat './jenkins/scripts/publish.powershell'   
+                sh './jenkins/scripts/publish.sh'   
             }
         }
     }
