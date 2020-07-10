@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('deliver') {
             steps {
+                npm install
                 sh './jenkins/scripts/deliver.sh'   
             }
         }
