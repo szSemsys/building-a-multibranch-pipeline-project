@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('deliver') {
             steps {
-                sudo sh './jenkins/scripts/deliver.sh'   
+                sh './jenkins/scripts/deliver.sh'   
             }
         }
         stage('publish') {
             steps {
-                sudo sh './jenkins/scripts/publish.sh'   
+                sh './jenkins/scripts/publish.sh'   
             }
         }
     }
