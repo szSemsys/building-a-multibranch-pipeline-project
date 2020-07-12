@@ -6,9 +6,15 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('deliver') { 
             steps {
-                sh 'npm install' 
+                sh './jenkins/scripts/deliver.sh' 
+            }
+        }
+        
+        stage('publish') { 
+            steps {
+                sh './jenkins/scripts/publish.sh' 
             }
         }
     }
