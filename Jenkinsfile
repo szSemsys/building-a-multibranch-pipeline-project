@@ -5,19 +5,10 @@ pipeline {
             args '-p 3000:3000' 
         }
     }
-    stages {
-        stage('deliver') { 
-            steps {
-                echo 'build'
-                npm install
-                npm run build
-            }
-        }
-        
-        stage('publish') { 
-            steps {
-                zip dir: './build', glob: '', zipFile: 'C:/Mutou/JenkinsPublish/webProject/dist.zip'
-            }
-        }
-    }
+    echo 'build'
+    npm install
+    npm run build
+
+    zip dir: './build', glob: '', zipFile: 'C:/Mutou/JenkinsPublish/webProject/dist.zip'
+    
 }
