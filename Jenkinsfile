@@ -8,13 +8,15 @@ pipeline {
     stages {
         stage('deliver') { 
             steps {
-                sh './jenkins/scripts/deliver.sh' 
+                echo 'build'
+                npm install
+                npm run build
             }
         }
         
         stage('publish') { 
             steps {
-                sh './jenkins/scripts/publish.sh' 
+                zip dir: './build', glob: '', zipFile: 'C:/Mutou/JenkinsPublish/webProject/dist.zip'
             }
         }
     }
